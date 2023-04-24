@@ -70,22 +70,19 @@ function buildPrompt(messages) {
     let result = [];
     let currentChunk = [];
     let currentLength = 2; // Accounts for the opening and closing square brackets in the JSON array
-    const firstBlock = jsonArray[0];
-    const firstBlockString = JSON.stringify(firstBlock);
-    const firstBlockLength = firstBlockString.length + 1; // +1 for the comma between objects
   
-    jsonArray.forEach((obj, index) => {
+    jsonArray.forEach((obj) => {
       const jsonString = JSON.stringify(obj);
       const objLength = jsonString.length + 1; // +1 for the comma between objects
   
-      if (index === 0 || currentLength + objLength <= maxLength) {
+      if (currentLength + objLength <= maxLength) {
         currentChunk.push(obj);
         currentLength += objLength;
       } else {
         // Store the current chunk and start a new one
         result.push(currentChunk);
-        currentChunk = [firstBlock, obj]; // Insert the first block at the beginning of the new chunk
-        currentLength = 2 + firstBlockLength + objLength;
+        currentChunk = [obj];
+        currentLength = 2 + objLength;
       }
     });
   
