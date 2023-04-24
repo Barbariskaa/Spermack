@@ -45,7 +45,7 @@ function buildPrompt(messages) {
         }
   
         return `${author}: ${m.content.trim()}`;
-    }).join('\n') + `\nAssistant: `;
+    }).join('\n\n') + `\nAssistant: `;
   }
 
   const currentTime = () => {
