@@ -10,7 +10,7 @@
 # Настройка Слаки
 
 Нужно зарегаться на Слаке.
-Затем нужно добавить Клода https://coomltd.slack.com/apps/A04KGS7N9A8-claude
+Затем нужно добавить Клода https://slack.com/apps/A04KGS7N9A8-claude
 
 # Настройка скрипта
 
