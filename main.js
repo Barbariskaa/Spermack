@@ -21,7 +21,7 @@ async function main() {
             const created = Math.floor(Date.now() / 1000);
             
             await sendChatReset();
-            wait(3000);
+            await wait(3000);
             const result = await waitForWebSocketResponse(slices);
             console.log(result)
             res.write(JSON.stringify({
